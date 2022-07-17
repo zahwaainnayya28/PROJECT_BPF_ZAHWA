@@ -147,7 +147,7 @@ class Complexion extends CI_Controller
     public function detail($id)
     {
         $data['judul'] = "Halaman Detail Complexion";
-        // $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['complexion'] = $this->Complexion_model->getById($id);
         $this->load->view("user/layout/header", $data);
         $this->load->view("kosmetik/vw_detail", $data);
